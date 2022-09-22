@@ -16,16 +16,31 @@ Código Condição de pagamento
  *  Em Cheque
  *  No Cartão
  */
-
+/**
+ * Estrutura de repetição
+ */
 //recebendo precoProduto e transformando o valor para decimal
-const precoProduto=parseFloat(prompt('Qual o preço do produto'))
+let  precoProduto=parseFloat(prompt('Qual o preço do produto?'))
+//WHILE
+while(isNaN(precoProduto)==true){
+    alert('O preço digitado é invalído, por favor digite apenas números!\n(exemplo: 21.50)')
+    precoProduto= parseFloat(prompt("Qual o preço do produto?"))
+
+}
+
 const mensagem=`
 Informe o método de pagamento:
 1)Dinheiro
 2)Cheque
 3)Cartão
 `
-const metodoDePagamento=prompt(mensagem)
+let metodoDePagamento=parseInt(prompt(mensagem))
+
+while(metodoDePagamento==0 || metodoDePagamento>3 || isNaN(metodoDePagamento) ){
+    alert('Método de pagamento inválido, por favor escolha um dos métodos de pagamento informados!')
+    metodoDePagamento=parseInt(prompt(mensagem)) 
+}
+
 console.log(precoProduto)
 console.log(metodoDePagamento)
 
@@ -50,8 +65,8 @@ if(metodoDePagamento==1 || metodoDePagamento==2 ){
     }else if(parcelas==2){
         alert(`O preço final do pagamento é ${precoProduto} reais.`)
     }else if(parcelas>=3 && parcelas<=12){
-        const desconto=precoProduto+(precoProduto*0.10)
-        alert(`O preço final do pagamento é ${desconto} reais.`)
+        const desconto=precoProduto*1.1
+        alert(`O preço final do pagamento é ${desconto.toFixed(2)} reais.`)
 }else{
     alert('O número de parcelas é inválido!')
 }

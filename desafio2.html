@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 2</title>
+</head>
+<body>
+    <script >
+        /*
+        Crie um programa que pergunte quantos produtos um cliente pegou e depois peça para que ele informe
+        o preço de cada produto. Ao recuperar possuir o valor de cada produto, faça a soma total da compra e
+        informe o maior e o menor preço que foi informado.
+        */
+
+        //recuperar a quantidade de produtos
+        const qtdProdutos= parseInt(prompt(`Informe a quantidade de produtos:`))
+
+        //ler o preço de cada produto e armazenar em um array
+        const precosProdutos=[]
+
+        for(let i=0; i<qtdProdutos; i++){
+            let preco = parseFloat(prompt(`Informe o preço do ${i+1}º produto:`))
+            precosProdutos[i]=preco/* Por um Array ser um vetor cada valor deve ser guardado no mesmo*/
+        }
+
+        let soma=0
+
+     /*    for(let i=0; i< precosProdutos.length; i++){
+            const valor=precosProdutos[i]
+            //soma=soma+valor
+            soma +=valor // soma+=valor é equivalente a soma=soma+valor
+        }*/
+
+        for(let preco of precosProdutos){
+            soma+=preco
+
+        }
+
+        alert(`O valor da soma dos produtos é ${soma}`)
+
+    </script>
+</body>
+</html>

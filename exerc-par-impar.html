@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //criar um array
+        const num=[]
+
+        //criar um loop que execute 6 vezes
+        for(let i=1;i<=6;i++){
+            const n=parseInt(prompt(`Informe o ${i}º número:`))
+            num.push(n)
+        }
+        //separar os pares dos ímpares
+        const pares=[], impares=[]
+
+        //percorrer o array com os números informados
+        //criar uma variável que guardará os valores de cada possição do array
+        // o array que iremos percorrer
+
+        for(let numero of num){
+            /**
+             * Separar os valores ímpares dos pares
+             * colocando cada valor no seu respectivo array
+            */
+
+            if(numero%2==0){
+                pares.push(numero)
+                
+            }else{
+                impares.push(numero)
+            } 
+        }
+       alert(`Nós temos ${pares.length} números pares: ${pares.join(', ')}`)
+       alert(`Nós temos ${impares.length} números ímpares: ${impares.join(', ')}`)
+
+
+
+    </script>
+</body>
+</html>

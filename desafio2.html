@@ -22,7 +22,8 @@
 
         for(let i=0; i<qtdProdutos; i++){
             let preco = parseFloat(prompt(`Informe o preço do ${i+1}º produto:`))
-            precosProdutos[i]=preco/* Por um Array ser um vetor cada valor deve ser guardado no mesmo*/
+            //precosProdutos[i]=preco/* Por um Array ser um vetor cada valor deve ser guardado no mesmo*/
+            precosProdutos.push(preco)
         }
 
         let soma=0
